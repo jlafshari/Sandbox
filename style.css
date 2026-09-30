@@ -12,6 +12,32 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    transition: background 0.5s ease;
+}
+
+/* Theme backgrounds */
+body.theme-purple {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+body.theme-ocean {
+    background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%);
+}
+
+body.theme-sunset {
+    background: linear-gradient(135deg, #FA8BFF 0%, #2BD2FF 50%, #2BFF88 100%);
+}
+
+body.theme-forest {
+    background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+}
+
+body.theme-rose {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+body.theme-dark {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
 .container {
@@ -25,9 +51,40 @@ body {
 
 h1 {
     color: #333;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: center;
     font-size: 2rem;
+}
+
+.theme-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.theme-selector label {
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#themeSelect {
+    padding: 8px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+#themeSelect:focus {
+    outline: none;
+    border-color: #667eea;
 }
 
 .input-container {

@@ -11,6 +11,7 @@ A simple, elegant todo list web application built with vanilla HTML, CSS, and Ja
 - ✅ Persistent storage using localStorage
 - ✅ Responsive design
 - ✅ Beautiful gradient UI
+- ✅ Multiple theme options with different background colors
 
 ## Preview on GitHub
 
@@ -82,6 +83,16 @@ If you use VS Code with the Live Server extension, right-click `index.html` and 
 
 4. **Clear completed tasks**: 
    - Click the "Clear Completed" button at the bottom to remove all completed tasks at once
+
+5. **Change theme**: 
+   - Use the theme dropdown at the top to select from 6 different background color themes:
+     - **Purple** (default) - Classic purple gradient
+     - **Ocean Blue** - Calming blue-green gradient
+     - **Sunset Orange** - Vibrant multi-color gradient
+     - **Forest Green** - Deep dark gradient
+     - **Rose Pink** - Soft pink gradient
+     - **Dark Mode** - Dark blue-gray gradient
+   - Your theme preference is automatically saved
 
 ## Technical Details
 
