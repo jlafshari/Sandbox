@@ -12,6 +12,33 @@ A simple, elegant todo list web application built with vanilla HTML, CSS, and Ja
 - ✅ Responsive design
 - ✅ Beautiful gradient UI
 
+## Preview on GitHub
+
+You can preview this application directly from GitHub without cloning the repository:
+
+### Option 1: GitHub Pages (Permanent Solution)
+If the repository owner has enabled GitHub Pages:
+1. Go to repository Settings → Pages
+2. Select the branch (e.g., `master` or `main`) and root folder
+3. Save and wait a few minutes
+4. Access at: `https://<username>.github.io/<repository-name>/`
+
+### Option 2: Raw GitHack (Instant Preview)
+For immediate preview without setup:
+1. Get the raw GitHub URL of `index.html`
+2. Visit https://raw.githack.com/
+3. Paste the raw URL or use directly:
+   - Development: `https://raw.githack.com/jlafshari/Sandbox/<branch>/index.html`
+   - Production CDN: `https://rawcdn.githack.com/jlafshari/Sandbox/<commit-hash>/index.html`
+
+### Option 3: HTMLPreview
+Another instant preview option:
+```
+https://htmlpreview.github.io/?https://github.com/jlafshari/Sandbox/blob/<branch>/index.html
+```
+
+**Note**: localStorage (task persistence) works with all preview methods!
+
 ## Quick Start - Testing in Browser
 
 There are several easy ways to test this application:
