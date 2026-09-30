@@ -4,14 +4,35 @@ const addBtn = document.getElementById('addBtn');
 const todoList = document.getElementById('todoList');
 const taskCount = document.getElementById('taskCount');
 const clearCompletedBtn = document.getElementById('clearCompleted');
+const themeSelect = document.getElementById('themeSelect');
 
 // Load todos from localStorage
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
+// Load theme from localStorage
+let currentTheme = localStorage.getItem('theme') || 'purple';
+
 // Initialize the app
 function init() {
+    applyTheme(currentTheme);
+    themeSelect.value = currentTheme;
     renderTodos();
     updateTaskCount();
+}
+
+// Apply theme
+function applyTheme(theme) {
+    // Remove all theme classes
+    document.body.className = '';
+    // Add selected theme class
+    document.body.classList.add(`theme-${theme}`);
+    currentTheme = theme;
+    localStorage.setItem('theme', theme);
+}
+
+// Theme change handler
+function handleThemeChange(e) {
+    applyTheme(e.target.value);
 }
 
 // Add new todo
@@ -127,6 +148,7 @@ todoInput.addEventListener('keypress', (e) => {
     }
 });
 clearCompletedBtn.addEventListener('click', clearCompleted);
+themeSelect.addEventListener('change', handleThemeChange);
 
 // Initialize the app
 init();
