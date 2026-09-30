@@ -29,13 +29,13 @@ For immediate preview without setup:
 1. Get the raw GitHub URL of `index.html`
 2. Visit https://raw.githack.com/
 3. Paste the raw URL or use directly:
-   - Development: `https://raw.githack.com/jlafshari/Sandbox/forge/add-a-todo-list-web-application-remove-e-aeb498/index.html`
-   - Production CDN: `https://rawcdn.githack.com/jlafshari/Sandbox/fb4337c8986accd9f2220045bf2541f92734af87/index.html`
+   - Development: `https://raw.githack.com/jlafshari/Sandbox/forge/move-the-theme-selector-to-the-top-right-53d2f8/index.html`
+   - Production CDN: `https://rawcdn.githack.com/jlafshari/Sandbox/02d2bb7/index.html`
 
 ### Option 3: HTMLPreview
 Another instant preview option:
 ```
-https://htmlpreview.github.io/?https://github.com/jlafshari/Sandbox/blob/forge/add-a-todo-list-web-application-remove-e-aeb498/index.html
+https://htmlpreview.github.io/?https://github.com/jlafshari/Sandbox/blob/forge/move-the-theme-selector-to-the-top-right-53d2f8/index.html
 ```
 
 **Note**: localStorage (task persistence) works with all preview methods!
