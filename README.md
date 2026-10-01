@@ -106,7 +106,10 @@ If you use VS Code with the Live Server extension, right-click `index.html` and 
 - `index.html` - Main HTML structure
 - `style.css` - Styling and layout
 - `app.js` - Application logic and functionality
+- `TodoModel.cs` - C# model layer for todo items
+- `TodoModel.kt` - Kotlin model layer for todo items
 - `README.md` - This file
+- `TEST.md` - Testing guide
 
 ## Browser Compatibility
 
