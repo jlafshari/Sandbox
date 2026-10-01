@@ -1,7 +1,5 @@
 package com.todoapp.models
 
-import java.time.Instant
-
 /**
  * Represents a single todo item with an ID, text description, and completion status.
  */
@@ -26,7 +24,7 @@ data class TodoItem(
      * @param text The text description for the todo item.
      */
     constructor(text: String) : this(
-        id = Instant.now().toEpochMilli(),
+        id = System.currentTimeMillis(),
         text = text,
         completed = false
     )
