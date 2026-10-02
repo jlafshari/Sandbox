@@ -109,8 +109,31 @@ If you use VS Code with the Live Server extension, right-click `index.html` and 
 - `TodoModel.cs` - C# model layer for todo items
 - `TodoModel.kt` - Kotlin model layer for todo items
 - `TodoModel.java` - Java model layer for todo items
+- `TodoModel.py` - Python model layer for todo items
+- `test_todomodel.py` - Unit tests for Python TodoModel
 - `README.md` - This file
 - `TEST.md` - Testing guide
+
+## Running Python Tests
+
+To run the unit tests for the Python TodoModel implementation:
+
+```bash
+# Run all tests with verbose output
+python3 -m unittest test_todomodel.py -v
+
+# Or run all tests in standard mode
+python3 -m unittest test_todomodel.py
+
+# Run with test discovery
+python3 -m unittest discover
+```
+
+The test suite covers:
+- TodoItem creation and equality
+- TodoManager CRUD operations
+- Input validation
+- State management (active/completed items)
 
 ## Browser Compatibility
 
