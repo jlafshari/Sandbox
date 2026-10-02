@@ -122,6 +122,37 @@ h1 {
     background: #5568d3;
 }
 
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background: #e9ecef;
+    border-color: #c0c4c8;
+}
+
+.filter-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
 #todoList {
     list-style: none;
     margin-bottom: 20px;

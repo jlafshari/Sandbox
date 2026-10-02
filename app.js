@@ -12,6 +12,9 @@ let todos = JSON.parse(localStorage.getItem('todos')) || [];
 // Load theme from localStorage
 let currentTheme = localStorage.getItem('theme') || 'purple';
 
+// Current filter state
+let currentFilter = 'all';
+
 // Initialize the app
 function init() {
     applyTheme(currentTheme);
@@ -85,16 +88,51 @@ function clearCompleted() {
     updateTaskCount();
 }
 
+// Get filtered todos based on current filter
+function getFilteredTodos() {
+    switch(currentFilter) {
+        case 'active':
+            return todos.filter(todo => !todo.completed);
+        case 'completed':
+            return todos.filter(todo => todo.completed);
+        default:
+            return todos;
+    }
+}
+
+// Set active filter
+function setFilter(filter) {
+    currentFilter = filter;
+    
+    // Update active state on buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.filter === filter) {
+            btn.classList.add('active');
+        }
+    });
+    
+    renderTodos();
+}
+
 // Render todos to the DOM
 function renderTodos() {
     todoList.innerHTML = '';
     
-    if (todos.length === 0) {
-        todoList.innerHTML = '<div class="empty-state">No tasks yet. Add one above!</div>';
+    const filteredTodos = getFilteredTodos();
+    
+    if (filteredTodos.length === 0) {
+        let emptyMessage = 'No tasks yet. Add one above!';
+        if (currentFilter === 'active' && todos.length > 0) {
+            emptyMessage = 'No active tasks!';
+        } else if (currentFilter === 'completed' && todos.length > 0) {
+            emptyMessage = 'No completed tasks yet!';
+        }
+        todoList.innerHTML = `<div class="empty-state">${emptyMessage}</div>`;
         return;
     }
     
-    todos.forEach(todo => {
+    filteredTodos.forEach(todo => {
         const li = document.createElement('li');
         li.className = `todo-item ${todo.completed ? 'completed' : ''}`;
         
@@ -149,6 +187,13 @@ todoInput.addEventListener('keypress', (e) => {
 });
 clearCompletedBtn.addEventListener('click', clearCompleted);
 themeSelect.addEventListener('change', handleThemeChange);
+
+// Filter button event listeners
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        setFilter(e.target.dataset.filter);
+    });
+});
 
 // Initialize the app
 init();
