@@ -1,6 +1,38 @@
 # Testing the Todo List Application
 
-## Easiest Method: Direct File Open
+## Automated Unit Tests
+
+The application includes automated unit tests written with Jest that test the core logic.
+
+### Running Unit Tests
+
+1. **Install dependencies** (first time only):
+   ```bash
+   npm install
+   ```
+
+2. **Run the tests**:
+   ```bash
+   npm test
+   ```
+
+3. **Run tests in watch mode** (automatically re-runs on file changes):
+   ```bash
+   npm run test:watch
+   ```
+
+The test suite (`app.test.js`) includes tests for:
+- HTML escaping (XSS protection)
+- Todo CRUD operations (add, delete, toggle, clear completed)
+- localStorage integration (save/load todos and themes)
+- Input validation (empty/whitespace handling)
+- Task counter display logic
+
+All tests run automatically in CI when you push changes.
+
+## Manual Browser Testing
+
+### Easiest Method: Direct File Open
 
 The **simplest way** to test this application is to:
 

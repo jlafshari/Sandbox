@@ -1,0 +1,20 @@
+{
+  "name": "todo-list-app",
+  "version": "1.0.0",
+  "description": "A simple todo list web application",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": ["todo", "list", "app"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": ["**/*.test.js"]
+  }
+}
