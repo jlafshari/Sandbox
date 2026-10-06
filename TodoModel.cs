@@ -48,14 +48,14 @@ namespace TodoApp.Models
     /// </summary>
     public class TodoManager
     {
-        private List<TodoItem> _todos;
+        private List<TodoItem> todos;
 
         /// <summary>
         /// Initializes a new instance of the TodoManager class.
         /// </summary>
         public TodoManager()
         {
-            _todos = new List<TodoItem>();
+            todos = new List<TodoItem>();
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace TodoApp.Models
         /// <returns>A read-only list of all todo items.</returns>
         public IReadOnlyList<TodoItem> GetAll()
         {
-            return _todos.AsReadOnly();
+            return todos.AsReadOnly();
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace TodoApp.Models
         /// <returns>A list of active todo items.</returns>
         public List<TodoItem> GetActive()
         {
-            return _todos.Where(t => !t.Completed).ToList();
+            return todos.Where(t => !t.Completed).ToList();
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace TodoApp.Models
         /// <returns>A list of completed todo items.</returns>
         public List<TodoItem> GetCompleted()
         {
-            return _todos.Where(t => t.Completed).ToList();
+            return todos.Where(t => t.Completed).ToList();
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace TodoApp.Models
             }
 
             var todo = new TodoItem(text);
-            _todos.Add(todo);
+            todos.Add(todo);
             return todo;
         }
 
@@ -110,7 +110,7 @@ namespace TodoApp.Models
         /// <returns>True if the item was found and toggled; otherwise, false.</returns>
         public bool Toggle(long id)
         {
-            var todo = _todos.FirstOrDefault(t => t.Id == id);
+            var todo = todos.FirstOrDefault(t => t.Id == id);
             if (todo != null)
             {
                 todo.Completed = !todo.Completed;
@@ -126,10 +126,10 @@ namespace TodoApp.Models
         /// <returns>True if the item was found and deleted; otherwise, false.</returns>
         public bool Delete(long id)
         {
-            var todo = _todos.FirstOrDefault(t => t.Id == id);
+            var todo = todos.FirstOrDefault(t => t.Id == id);
             if (todo != null)
             {
-                _todos.Remove(todo);
+                todos.Remove(todo);
                 return true;
             }
             return false;
@@ -141,8 +141,8 @@ namespace TodoApp.Models
         /// <returns>The number of items removed.</returns>
         public int ClearCompleted()
         {
-            var completedCount = _todos.Count(t => t.Completed);
-            _todos = _todos.Where(t => !t.Completed).ToList();
+            var completedCount = todos.Count(t => t.Completed);
+            todos = todos.Where(t => !t.Completed).ToList();
             return completedCount;
         }
 
@@ -152,7 +152,7 @@ namespace TodoApp.Models
         /// <returns>The number of active items.</returns>
         public int GetActiveCount()
         {
-            return _todos.Count(t => !t.Completed);
+            return todos.Count(t => !t.Completed);
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace TodoApp.Models
         /// </summary>
         public void Clear()
         {
-            _todos.Clear();
+            todos.Clear();
         }
     }
 }
