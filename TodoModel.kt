@@ -127,6 +127,14 @@ class TodoManager {
     }
     
     /**
+     * Gets the count of completed todo items.
+     * @return The number of completed items.
+     */
+    fun getCompletedCount(): Int {
+        return todos.count { it.completed }
+    }
+    
+    /**
      * Clears all todo items.
      */
     fun clear() {
