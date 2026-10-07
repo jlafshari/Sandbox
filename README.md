@@ -101,6 +101,37 @@ If you use VS Code with the Live Server extension, right-click `index.html` and 
 - **XSS protection**: User input is properly escaped to prevent security vulnerabilities
 - **Responsive**: Works on desktop and mobile devices
 
+## Development
+
+Want to contribute? Check out our [CONTRIBUTING.md](CONTRIBUTING.md) guide for full details.
+
+### Quick Start
+
+Since this is a vanilla JavaScript project, there are no dependencies to install. Just clone the repository and you're ready to go!
+
+### Running Tests
+
+**Open directly in browser:**
+```bash
+# Simply open index.html in your browser
+open index.html  # macOS
+xdg-open index.html  # Linux
+start index.html  # Windows
+```
+
+**Using a local web server (recommended):**
+```bash
+# Python 3
+python3 -m http.server 8000
+
+# Node.js
+npx http-server -p 8000
+```
+
+Then open http://localhost:8000 in your browser.
+
+See [TEST.md](TEST.md) for a comprehensive testing guide.
+
 ## Files
 
 - `index.html` - Main HTML structure
