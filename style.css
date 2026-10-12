@@ -163,6 +163,22 @@ h1 {
     color: #333;
 }
 
+.edit-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background: #218838;
+}
+
 .delete-btn {
     background: #dc3545;
     color: white;

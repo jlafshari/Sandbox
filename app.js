@@ -56,6 +56,24 @@ function addTodo() {
     todoInput.value = '';
 }
 
+// Edit todo
+function editTodo(id) {
+    const todo = todos.find(todo => todo.id === id);
+    if (!todo) return;
+    
+    const newText = prompt('Edit task:', todo.text);
+    if (newText !== null && newText.trim() !== '') {
+        todos = todos.map(t => {
+            if (t.id === id) {
+                return { ...t, text: newText.trim() };
+            }
+            return t;
+        });
+        saveTodos();
+        renderTodos();
+    }
+}
+
 // Delete todo
 function deleteTodo(id) {
     todos = todos.filter(todo => todo.id !== id);
@@ -101,6 +119,7 @@ function renderTodos() {
         li.innerHTML = `
             <input type="checkbox" class="todo-checkbox" ${todo.completed ? 'checked' : ''} data-id="${todo.id}">
             <span class="todo-text">${escapeHtml(todo.text)}</span>
+            <button class="edit-btn" data-id="${todo.id}">Edit</button>
             <button class="delete-btn" data-id="${todo.id}">Delete</button>
         `;
         
@@ -111,6 +130,13 @@ function renderTodos() {
     document.querySelectorAll('.todo-checkbox').forEach(checkbox => {
         checkbox.addEventListener('change', (e) => {
             toggleTodo(Number(e.target.dataset.id));
+        });
+    });
+    
+    // Add event listeners to edit buttons
+    document.querySelectorAll('.edit-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            editTodo(Number(e.target.dataset.id));
         });
     });
     
