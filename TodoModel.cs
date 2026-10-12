@@ -120,6 +120,29 @@ namespace TodoApp.Models
         }
 
         /// <summary>
+        /// Updates the text of an existing todo item.
+        /// </summary>
+        /// <param name="id">The ID of the todo item to update.</param>
+        /// <param name="text">The new text description for the todo item.</param>
+        /// <returns>True if the item was found and updated; otherwise, false.</returns>
+        /// <exception cref="ArgumentException">Thrown when text is null or whitespace.</exception>
+        public bool Update(long id, string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                throw new ArgumentException("Todo text cannot be empty.", nameof(text));
+            }
+
+            var todo = _todos.FirstOrDefault(t => t.Id == id);
+            if (todo != null)
+            {
+                todo.Text = text;
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
         /// Deletes a todo item by ID.
         /// </summary>
         /// <param name="id">The ID of the todo item to delete.</param>
